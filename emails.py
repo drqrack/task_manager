@@ -17,4 +17,4 @@ emails = file.read().split("\n")
 # Different approach
 for email in emails:
     username = email.split("@")
-print(username[0])
+    print(username[0])
