@@ -1,14 +1,14 @@
-# i = 1
-# while i < 6:
-#     print(i)
-#     i += 1
+from oop import Chat
 
-# users = 1
-# while users < 10:
-#     print(users)
-#     users += 2
+# chat_with_abena = Chat("Abena Jollof", "Be guided!", "7:30 pm")                         #creating a copy of the chat
+# chat_with_michael = Chat("Michael Hammond", "Extend the portfolio deadline", "5:56 am")
+# chat_with_024409924 = Chat("The Closer", "When are we ending the class", "3:59 pm")
 
-users = 100
-while users > 10:
-    print(users)
-    users -= 1
+# print(chat_with_michael.open())
+# print(chat_with_024409924.open())
+
+
+# using the prompt/input alternative
+chat_with_abena = Chat()
+
+print(chat_with_abena.open())
