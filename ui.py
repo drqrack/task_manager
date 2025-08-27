@@ -25,8 +25,8 @@ def show_add_task_frame(app):
     entry.grid()
     btn = tk.Button(master=frame, text="Submit", command=lambda:submit_task(entry.get(), app))
     btn.grid()
-    # btn_cancel = tk.Button(master=frame, text="Cancel", command=lambda: show_all_tasks_frame(app))
-    # btn_cancel.grid(row=2, column=1)
+    btn_cancel = tk.Button(master=frame, text="Cancel", command=lambda: show_all_tasks_frame(app))
+    btn_cancel.grid(row=2, column=1)
 
     frame.tkraise()
 
