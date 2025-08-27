@@ -1,4 +1,0 @@
-bob@example.com
-evans@mikas.com
-evan@you.com
-linda@cain.com

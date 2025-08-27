@@ -1,14 +1,10 @@
-from oop import Chat
+import tkinter as tk
+import ui
 
-# chat_with_abena = Chat("Abena Jollof", "Be guided!", "7:30 pm")                         #creating a copy of the chat
-# chat_with_michael = Chat("Michael Hammond", "Extend the portfolio deadline", "5:56 am")
-# chat_with_024409924 = Chat("The Closer", "When are we ending the class", "3:59 pm")
+app = tk.Tk()
+app.title("Task Manager")
+app.geometry("720x480")
 
-# print(chat_with_michael.open())
-# print(chat_with_024409924.open())
+ui.show_all_tasks_frame(app)
 
-
-# using the prompt/input alternative
-chat_with_abena = Chat()
-
-print(chat_with_abena.open())
+app.mainloop()
