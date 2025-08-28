@@ -24,19 +24,19 @@ def handle_update(id, title, app):
 
 def show_edit_task_frame(task, app):
     frame = tk.Frame(master=app)
-    frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+    frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
-    label = tk.Label(master=frame, text=f"Edit task: {task["title"]}")
-    label.grid(row=1, column=1)
+    label = tk.Label(master=frame, text=f"Edit task: {task["title"]}", font=("Arial", 14, "bold"))
+    label.grid(row=0, column=0, columnspan=2, pady=10)
 
     # Add an entry widget and show the task title
-    entry = tk.Entry(master=frame)
+    entry = tk.Entry(master=frame, width=30)
     entry.insert(0, task["title"])
-    entry.grid(row=2, column=1)
+    entry.grid(row=1, column=0, columnspan=2, pady=5)
 
     # Add a button with text update for saving the changes
-    update_button = tk.Button(master=frame, text="Update", command=lambda: handle_update(task["_id"], entry.get(), app))
-    update_button.grid(row=3, column=1)
+    update_button = tk.Button(master=frame, width=12, text="Update", command=lambda: handle_update(task["_id"], entry.get(), app))
+    update_button.grid(row=2, column=1, pady=10, sticky="e")
     # Add a button with text Back/Cancel for 
     cancel_button = tk.Button(master=frame, text="Cancel", command=lambda: frame.destroy())
     cancel_button.grid(row=3, column=2)
@@ -45,12 +45,14 @@ def show_edit_task_frame(task, app):
 
 def show_add_task_frame(app):
     frame = tk.Frame(master=app)
-    frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+    frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
-    label = tk.Label(master=frame, text="What do you want to do?")
-    label.grid()
+    label = tk.Label(master=frame, text="Add New Task", font=("Arial", 14, "bold"))
+    label.grid(row=0, column=0, columnspan=2, pady=10)
+
     entry = tk.Entry(master=frame)
     entry.grid()
+    
     btn = tk.Button(master=frame, text="Submit", command=lambda:submit_task(entry.get(), app))
     btn.grid()
     btn_cancel = tk.Button(master=frame, text="Cancel", command=lambda: frame.destroy())
@@ -60,7 +62,7 @@ def show_add_task_frame(app):
 
 def show_all_tasks_frame(app):
     frame = tk.Frame(master=app)
-    frame.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
+    frame.grid(row=0, column=0, sticky="nsew", padx=20, pady=20)
 
     tasks = commands.get_tasks().to_list()
     for task in tasks:
